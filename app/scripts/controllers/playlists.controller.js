@@ -1,3 +1,4 @@
+'use strict';
 
 angular.module('starter')
 .controller('PlaylistsCtrl', function ($scope,$state,$q,playListService) {
@@ -8,13 +9,13 @@ angular.module('starter')
 			$scope.playlists = response;
  		}, function errorCallback(error){
  			return $q.reject(error);
- 		}) 		
+ 		}); 		
 	};
 	
 	getPlayLists();
 
 	$scope.goToPlaylist = function(paramAudioTitle){
  		$state.go('app.single',{audioTitle:paramAudioTitle});
-	}
+	};
 
-})
+});

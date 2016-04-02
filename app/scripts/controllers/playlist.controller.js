@@ -1,6 +1,7 @@
+'use strict';
 
 angular.module('starter')
-.controller('PlaylistCtrl', function ($scope,$stateParams,playListService) {
+.controller('PlaylistCtrl', function ($scope,$state,$q,$stateParams,playListService) {
 	console.log($stateParams.audioTitle);
 	$scope.audioTitle = $stateParams.audioTitle;
 
@@ -17,10 +18,11 @@ angular.module('starter')
 			}
  		}, function errorCallback(error){
  			return $q.reject(error);
- 		}) 		
+ 		}); 		
 	};
 	
 	getPlayLists();
-
-	console.log('-->');
-})
+	$scope.goToPlayMedia = function(audioId){
+		$state.go('app.audio',{audio:audioId,playlist:$scope.audioTitle});
+	};
+});

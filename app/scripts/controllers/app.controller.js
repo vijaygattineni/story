@@ -1,3 +1,4 @@
+'use strict';
 angular.module('starter')
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -38,4 +39,4 @@ angular.module('starter')
       $scope.closeLogin();
     }, 1000);
   };
-})
+});

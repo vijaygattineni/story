@@ -1,10 +1,9 @@
-<ion-view view-title="Playlist">
+<ion-view view-title= "{{audioTitle}}">
   <ion-content>
-    <h1>{{audioTitle}}</h1>
-     <ion-list>
+	 <ion-list>
 	      <ion-item ng-repeat="audio in playlist" ng-click="goToPlayMedia(audio)">
 	        {{audio}}
 	      </ion-item>
-    </ion-list>
+	 </ion-list>
   </ion-content>
 </ion-view>

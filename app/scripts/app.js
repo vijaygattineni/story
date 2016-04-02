@@ -67,6 +67,19 @@ angular.module('starter', ['ionic'])
         controller: 'PlaylistCtrl'
       }
     }
+  })
+  .state('app.audio', {
+  url: '/player',
+  params:{
+    playlist: null,
+    audio : null
+  },
+  views: {
+    'menuContent': {
+      templateUrl: 'views/templates/player.html',
+      controller: 'PlayerCtrl'
+    }
+  }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
